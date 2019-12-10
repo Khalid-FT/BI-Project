@@ -1,0 +1,971 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20192.19.0515.1630                               -->
+<workbook original-version='18.1' source-build='2019.2.0 (20192.19.0515.1630)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='FACT_REUSSITE+ (Multiple Connections)' inline='true' name='federated.1dva8zt135fnax0zmge9q0z9dlz9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='FACT_REUSSITE' name='excel-direct.0pm10i21bmd4x21h39okv0rou7q9'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/FACT_REUSSITE.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_ANNEE' name='excel-direct.129zhxt1qd3bdp1e89i010pa0zj8'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_ANNEE.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_DELEGATION' name='excel-direct.0kycs9x03gy6461b3blhl08k1v0d'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_DELEGATION.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_FILIERE' name='excel-direct.1u1jdhk0uqroya15t41xs16eahie'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_FILIERE.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_MODULE' name='excel-direct.1hxkuxw0nftnqw1bxzs5v10gbtfi'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_MODULE.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_RESULTAT' name='excel-direct.07qa6c01qm3sqv12a80v700ftyx5'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_RESULTAT.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_SEXE' name='excel-direct.1b2qi020ewzdew1aelf8n01pwrt3'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_SEXE.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='DIM_TYPE_BAC' name='excel-direct.0cb5ovt0wr2jdg17zxkah0wrwgay'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/fatah/Desktop/PROJET INFO DECISIONELLE/REUSSITE&amp;ECHEC/reussite&amp;echec/DIM_TYPE_BAC.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[FACT_REUSSITE].[ID_TYPE_BAC]' />
+              <expression op='[DIM_TYPE_BAC].[ID_TYPE_BAC]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[FACT_REUSSITE].[ID_SEXE]' />
+                <expression op='[DIM_SEXE].[ID_SEXE]' />
+              </expression>
+            </clause>
+            <relation join='inner' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[FACT_REUSSITE].[ID_RESULTAT]' />
+                  <expression op='[DIM_RESULTAT].[ID_RESULTAT]' />
+                </expression>
+              </clause>
+              <relation join='inner' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[FACT_REUSSITE].[CODE_MODULE]' />
+                    <expression op='[DIM_MODULE].[CODE_MODULE]' />
+                  </expression>
+                </clause>
+                <relation join='inner' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='[FACT_REUSSITE].[ID_FILIERE]' />
+                      <expression op='[DIM_FILIERE].[ID_FILIERE]' />
+                    </expression>
+                  </clause>
+                  <relation join='inner' type='join'>
+                    <clause type='join'>
+                      <expression op='='>
+                        <expression op='[FACT_REUSSITE].[ID_DELEGATION]' />
+                        <expression op='[DIM_DELEGATION].[ID_DELEGATION]' />
+                      </expression>
+                    </clause>
+                    <relation join='inner' type='join'>
+                      <clause type='join'>
+                        <expression op='='>
+                          <expression op='[FACT_REUSSITE].[ID_ANNEE]' />
+                          <expression op='[DIM_ANNEE].[ID_ANNEE]' />
+                        </expression>
+                      </clause>
+                      <relation connection='excel-direct.0pm10i21bmd4x21h39okv0rou7q9' name='FACT_REUSSITE' table='[FACT_REUSSITE$]' type='table'>
+                        <columns gridOrigin='A1:H27637:no:A1:H27637:0' header='yes' outcome='6'>
+                          <column datatype='string' name='CODE_MODULE' ordinal='0' />
+                          <column datatype='integer' name='ID_RESULTAT' ordinal='1' />
+                          <column datatype='integer' name='ID_SESSION' ordinal='2' />
+                          <column datatype='integer' name='ID_ANNEE' ordinal='3' />
+                          <column datatype='integer' name='ID_FILIERE' ordinal='4' />
+                          <column datatype='integer' name='ID_TYPE_BAC' ordinal='5' />
+                          <column datatype='integer' name='ID_SEXE' ordinal='6' />
+                          <column datatype='integer' name='ID_DELEGATION' ordinal='7' />
+                        </columns>
+                      </relation>
+                      <relation connection='excel-direct.129zhxt1qd3bdp1e89i010pa0zj8' name='DIM_ANNEE' table='[DIM_ANNEE$]' type='table'>
+                        <columns gridOrigin='A1:B3:no:A1:B3:0' header='yes' outcome='6'>
+                          <column datatype='integer' name='ANNEE' ordinal='0' />
+                          <column datatype='integer' name='ID_ANNEE' ordinal='1' />
+                        </columns>
+                      </relation>
+                    </relation>
+                    <relation connection='excel-direct.0kycs9x03gy6461b3blhl08k1v0d' name='DIM_DELEGATION' table='[DIM_DELEGATION$]' type='table'>
+                      <columns gridOrigin='A1:B75:no:A1:B75:0' header='yes' outcome='6'>
+                        <column datatype='string' name='DELEGATION' ordinal='0' />
+                        <column datatype='integer' name='ID_DELEGATION' ordinal='1' />
+                      </columns>
+                    </relation>
+                  </relation>
+                  <relation connection='excel-direct.1u1jdhk0uqroya15t41xs16eahie' name='DIM_FILIERE' table='[DIM_FILIERE$]' type='table'>
+                    <columns gridOrigin='A1:B4:no:A1:B4:0' header='yes' outcome='6'>
+                      <column datatype='integer' name='ID_FILIERE' ordinal='0' />
+                      <column datatype='string' name='FILIERE' ordinal='1' />
+                    </columns>
+                  </relation>
+                </relation>
+                <relation connection='excel-direct.1hxkuxw0nftnqw1bxzs5v10gbtfi' name='DIM_MODULE' table='[DIM_MODULE$]' type='table'>
+                  <columns gridOrigin='A1:C73:no:A1:C73:0' header='yes' outcome='6'>
+                    <column datatype='string' name='CODE_MODULE' ordinal='0' />
+                    <column datatype='string' name='INTITULE_MODULE' ordinal='1' />
+                    <column datatype='string' name='Semestre' ordinal='2' />
+                  </columns>
+                </relation>
+              </relation>
+              <relation connection='excel-direct.07qa6c01qm3sqv12a80v700ftyx5' name='DIM_RESULTAT' table='[DIM_RESULTAT$]' type='table'>
+                <columns gridOrigin='A1:B8:no:A1:B8:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='ID_RESULTAT' ordinal='0' />
+                  <column datatype='string' name='Résultat' ordinal='1' />
+                </columns>
+              </relation>
+            </relation>
+            <relation connection='excel-direct.1b2qi020ewzdew1aelf8n01pwrt3' name='DIM_SEXE' table='[DIM_SEXE$]' type='table'>
+              <columns gridOrigin='A1:B3:no:A1:B3:0' header='yes' outcome='6'>
+                <column datatype='string' name='SEXE' ordinal='0' />
+                <column datatype='integer' name='ID_SEXE' ordinal='1' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='excel-direct.0cb5ovt0wr2jdg17zxkah0wrwgay' name='DIM_TYPE_BAC' table='[DIM_TYPE_BAC$]' type='table'>
+            <columns gridOrigin='A1:B22:no:A1:B22:0' header='yes' outcome='6'>
+              <column datatype='string' name='TYPE BAC' ordinal='0' />
+              <column datatype='integer' name='ID_TYPE_BAC' ordinal='1' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[ANNEE]' value='[DIM_ANNEE].[ANNEE]' />
+          <map key='[CODE_MODULE (DIM!MODULE)]' value='[DIM_MODULE].[CODE_MODULE]' />
+          <map key='[CODE_MODULE]' value='[FACT_REUSSITE].[CODE_MODULE]' />
+          <map key='[DELEGATION]' value='[DIM_DELEGATION].[DELEGATION]' />
+          <map key='[FILIERE]' value='[DIM_FILIERE].[FILIERE]' />
+          <map key='[ID_ANNEE (DIM!ANNEE)]' value='[DIM_ANNEE].[ID_ANNEE]' />
+          <map key='[ID_ANNEE]' value='[FACT_REUSSITE].[ID_ANNEE]' />
+          <map key='[ID_DELEGATION (DIM!DELEGATION)]' value='[DIM_DELEGATION].[ID_DELEGATION]' />
+          <map key='[ID_DELEGATION]' value='[FACT_REUSSITE].[ID_DELEGATION]' />
+          <map key='[ID_FILIERE (DIM!FILIERE)]' value='[DIM_FILIERE].[ID_FILIERE]' />
+          <map key='[ID_FILIERE]' value='[FACT_REUSSITE].[ID_FILIERE]' />
+          <map key='[ID_RESULTAT (DIM!RESULTAT)]' value='[DIM_RESULTAT].[ID_RESULTAT]' />
+          <map key='[ID_RESULTAT]' value='[FACT_REUSSITE].[ID_RESULTAT]' />
+          <map key='[ID_SESSION]' value='[FACT_REUSSITE].[ID_SESSION]' />
+          <map key='[ID_SEXE (DIM!SEXE)]' value='[DIM_SEXE].[ID_SEXE]' />
+          <map key='[ID_SEXE]' value='[FACT_REUSSITE].[ID_SEXE]' />
+          <map key='[ID_TYPE_BAC (DIM!TYPE!BAC)]' value='[DIM_TYPE_BAC].[ID_TYPE_BAC]' />
+          <map key='[ID_TYPE_BAC]' value='[FACT_REUSSITE].[ID_TYPE_BAC]' />
+          <map key='[INTITULE_MODULE]' value='[DIM_MODULE].[INTITULE_MODULE]' />
+          <map key='[Résultat]' value='[DIM_RESULTAT].[Résultat]' />
+          <map key='[SEXE]' value='[DIM_SEXE].[SEXE]' />
+          <map key='[Semestre]' value='[DIM_MODULE].[Semestre]' />
+          <map key='[TYPE BAC]' value='[DIM_TYPE_BAC].[TYPE BAC]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>CODE_MODULE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CODE_MODULE]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>CODE_MODULE</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_RESULTAT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_RESULTAT]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_RESULTAT</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_SESSION</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_SESSION]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_SESSION</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_ANNEE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_ANNEE]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_ANNEE</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_FILIERE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_FILIERE]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_FILIERE</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_TYPE_BAC</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_TYPE_BAC]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_TYPE_BAC</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_SEXE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_SEXE]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_SEXE</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_DELEGATION</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_DELEGATION]</local-name>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias>ID_DELEGATION</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[FACT_REUSSITE]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:H27637:no:A1:H27637:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ANNEE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ANNEE]</local-name>
+            <parent-name>[DIM_ANNEE]</parent-name>
+            <remote-alias>ANNEE</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_ANNEE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_ANNEE (DIM!ANNEE)]</local-name>
+            <parent-name>[DIM_ANNEE]</parent-name>
+            <remote-alias>ID_ANNEE</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_ANNEE]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B3:no:A1:B3:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DELEGATION</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DELEGATION]</local-name>
+            <parent-name>[DIM_DELEGATION]</parent-name>
+            <remote-alias>DELEGATION</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_DELEGATION</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_DELEGATION (DIM!DELEGATION)]</local-name>
+            <parent-name>[DIM_DELEGATION]</parent-name>
+            <remote-alias>ID_DELEGATION</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_DELEGATION]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B75:no:A1:B75:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_FILIERE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_FILIERE (DIM!FILIERE)]</local-name>
+            <parent-name>[DIM_FILIERE]</parent-name>
+            <remote-alias>ID_FILIERE</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FILIERE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[FILIERE]</local-name>
+            <parent-name>[DIM_FILIERE]</parent-name>
+            <remote-alias>FILIERE</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_FILIERE]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B4:no:A1:B4:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CODE_MODULE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[CODE_MODULE (DIM!MODULE)]</local-name>
+            <parent-name>[DIM_MODULE]</parent-name>
+            <remote-alias>CODE_MODULE</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INTITULE_MODULE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[INTITULE_MODULE]</local-name>
+            <parent-name>[DIM_MODULE]</parent-name>
+            <remote-alias>INTITULE_MODULE</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Semestre</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Semestre]</local-name>
+            <parent-name>[DIM_MODULE]</parent-name>
+            <remote-alias>Semestre</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_MODULE]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C73:no:A1:C73:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_RESULTAT</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_RESULTAT (DIM!RESULTAT)]</local-name>
+            <parent-name>[DIM_RESULTAT]</parent-name>
+            <remote-alias>ID_RESULTAT</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Résultat</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Résultat]</local-name>
+            <parent-name>[DIM_RESULTAT]</parent-name>
+            <remote-alias>Résultat</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_RESULTAT]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B8:no:A1:B8:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEXE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SEXE]</local-name>
+            <parent-name>[DIM_SEXE]</parent-name>
+            <remote-alias>SEXE</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_SEXE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_SEXE (DIM!SEXE)]</local-name>
+            <parent-name>[DIM_SEXE]</parent-name>
+            <remote-alias>ID_SEXE</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_SEXE]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B3:no:A1:B3:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TYPE BAC</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TYPE BAC]</local-name>
+            <parent-name>[DIM_TYPE_BAC]</parent-name>
+            <remote-alias>TYPE BAC</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LAR_RMA_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID_TYPE_BAC</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID_TYPE_BAC (DIM!TYPE!BAC)]</local-name>
+            <parent-name>[DIM_TYPE_BAC]</parent-name>
+            <remote-alias>ID_TYPE_BAC</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[DIM_TYPE_BAC]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:B22:no:A1:B22:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column aggregation='Sum' datatype='integer' name='[ANNEE]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_ANNEE (DIM!ANNEE)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_ANNEE]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_DELEGATION (DIM!DELEGATION)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_DELEGATION]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_FILIERE (DIM!FILIERE)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_FILIERE]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_RESULTAT (DIM!RESULTAT)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_RESULTAT]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_SESSION]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_SEXE (DIM!SEXE)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_SEXE]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_TYPE_BAC (DIM!TYPE!BAC)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID_TYPE_BAC]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.912863' measure-ordering='alphabetic' measure-percentage='0.0871369' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Morocco&quot;' />
+      </semantic-values>
+      <date-options start-of-week='saturday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Reussite&amp;Echec</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FACT_REUSSITE+ (Multiple Connections)' name='federated.1dva8zt135fnax0zmge9q0z9dlz9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1dva8zt135fnax0zmge9q0z9dlz9'>
+            <column aggregation='Sum' datatype='integer' name='[ANNEE]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[ID_RESULTAT]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Résultat]' role='dimension' type='nominal' />
+            <column datatype='string' name='[TYPE BAC]' role='dimension' type='nominal' />
+            <column-instance column='[ID_RESULTAT]' derivation='Count' name='[cnt:ID_RESULTAT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Résultat]' derivation='CountD' name='[ctd:Résultat:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ANNEE]' derivation='None' name='[none:ANNEE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TYPE BAC]' derivation='None' name='[none:TYPE BAC:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1dva8zt135fnax0zmge9q0z9dlz9].[cnt:ID_RESULTAT:qk]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.1dva8zt135fnax0zmge9q0z9dlz9].[ctd:Résultat:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[cnt:ID_RESULTAT:qk]</column>
+            <column>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[ctd:Résultat:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:ANNEE:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[cnt:ID_RESULTAT:qk]</rows>
+        <cols>([federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:ANNEE:ok] / [federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:TYPE BAC:nk])</cols>
+      </table>
+      <simple-id uuid='{B2DA569A-1DD3-433E-880F-7318B5109BA2}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:ANNEE:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:ANNEE:ok]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:DELEGATION:nk]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:FILIERE:nk]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:ID_RESULTAT:ok]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:INTITULE_MODULE:nk]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:Résultat:nk]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:SEXE:nk]</field>
+            <field>[federated.1dva8zt135fnax0zmge9q0z9dlz9].[none:TYPE BAC:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4E2D15FF-55E8-4962-9BA3-1D0339CBFD84}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO29V2wkW3rn+YuI9N4nvWfRlXe3bvU1rdt970itQUs90tVgzC52IcwAi9X7
+      Pi0gYF8X2IcFdnewD4t1mh1pNOaqe1qaVreurulblmVYJItF75PJZDqmjQyzDyxHn8kiWexi
+      /IBCgZlxzvkiMv5xvvOdc74QdF3XMTA4pYhv2wADg7eJIQCDU40hAINTjSEAg1ON6W0bYPCb
+      R3JlHtUWJOwSmJ5P0drWwNrqKnaTRk53EnRCrixSziyzli3hDdUjlVIkcyX80SYaQt7nNenc
+      u3OPy9evISIzMjKBrov4/B784XoorFHGQnxpHrMzQHPEzeT0HCpm2jvbsVJhamoKVbTR2t6G
+      hTJzC0ma25oQNZn5mWlEZ5jmusCu52L0AAY1ovBX/+HP+dnPv4L8LP/T//g/Mxkv8sUXXzDy
+      67/mf/2zn5JeHOar+1P85y++oAygyfzipz+nuKUmvbjCdKz48iYcu/d3jC1lSc4+4Fd3x/ib
+      L37K8txjvnkww/C3P+fOrW/4xf2pl+Xz8Rl+eWuI1elBfnVngpXRr/lf/o9/w0pW5vFXP+X+
+      ZIJMJrPn2RgCMKgJeW0KQheR1ufIKNBz7hwjg4PoAKKL8+EK9+dzAFSKGZ6OjBBPFygX0jwd
+      GSGRKb2sa3p4lPaz/c//stDWXE9rZzcDV79P8vafo7RcJWQTsdpdOKxmVA1WF6cZGZ9GVTei
+      92vLs4xNrdLQEOTBw3l+9/vdjEwtMTa+wsef3ORsT/ue52O4QAY1MTn8hJXFBFp6ienlNDZ/
+      M65yjCc5GYCu9z7mm3/zv1N//R/j8Dfze59/jkMtMR5u53c//xzXi4p0lcnlDFfP+re1IZqd
+      dHacwdfTDOvDZNdWuPDhh7SaYywJn/D5bw0AkAXOXPqQD9s1/m7oATMT87SoZWKzIuc8EvNL
+      WawBCZfLta2NF0h/+qd/+qeHe4kM3l100jmZj3/4GVcHWimrFgKBEBd768hqDnrbm/CEm6h3
+      iTij7XhY4+79IdZ1J27SDD4Yoih5aAh5qeQSjCysc763A0F4Ub2GyxfGbTcD4A1FcFgkgk3d
+      DHQ1Iug6o4/vMTo+R11LC3azyOTIfWbXVN672ENT/3U++8FHSHKRG9+7wfDtvych22htCO16
+      RoIxE2zwNkjODTEn13GxK/xW7XhrAigWi9jt9rfRtMEJpFgsYrPZEF52B8fDWxsEr6+vv62m
+      DU4gb+t+MKJABqcaIwp0XFSK3Lt3j3SuTOf5C8RGHpKpSFy/eZ35R7dQwgNcOVNPMbXAX/5y
+      iH/+h7/zti0+FRgCOC5MNq7c+B7zE2NIuWXsbVc5b88wn5W5cOkiwysquiozMZektXH3mUuD
+      w8VwgY4NjemnI1iCG0sBNFVFVTXE1wZ9qcUxnk7OMfXsGbPxvWcwDQ4Howc4JtRimvG5Bawr
+      SeT+sxB/zJ2Khfeuh7j17R1iJR3Pex/w+T86x8jICK0R7/6VGrwxby0MGo/HiUQib6NpgxNI
+      PB4nHA4fexj0rfYApVJp/4MMTgWKolAul4+93bcmAF3X38oJG5xMTp0ABEHA6zX8XIMNyuUy
+      Ho/n9MwEGxicBAwBGJxqDAEYnGreiXmA2yMLlCtq1ce31floiRrjD4N3RAD/6ov7rGW37jjd
+      nX/6w7OGAAwAwwUyOOUYAjA41RgCMDjVGAIwONUYAjA41RgCMDjVGAIwONUYAjA41RgCMDjV
+      GAIwONUcoQB05iYmKVMhk8mjlgskM7mja87A4AAcmQAyy1M8eviUPCUWFhJMjo2giuajas7A
+      4EAcyWI4rVJkLlGmu3kj8enS5GOs9V2ccVtRVRVN09A0DVmWD6W9Wvf1q+rhtW1wOKiqSqVS
+      OfZ2j0QAcjHDamyJ5NIiHXVBGjrPIylx4tkSYY8NSZIQRRGLxXIo7dW6jU6SDq9tg8NBkiTM
+      ZvO7kRXC5qnjk0/ryK6uYg37KKbLeBwRVtdLgO0omjQwOBBHuh/AE95wgay+Dd8/GjTSoRuc
+      LN6JDTEGBi/QlRJ6Ll718YYADN4p1NgQxb/4r6s+3pgIMzjVGAIwONUYAjA41RgCMDjVGAIw
+      ONUYAjA41RgCMDjVGAIwONUYAjA41RgCMDjV7CmAYjbB0mr2uGwxMDh29lwLtL42xU9/NcWZ
+      zjoAQk3dnO1qPBbDDAyOg70XwwkSkfpm2tubAHB4PMdhk4HBsbGnAPx1vXwSkrBJFabGnxFf
+      Vwj73cdlm4HBkbOnACrlND/9tz+jKJqILWb4Z//NHx+XXQYGx8KeAhAEAavVhioImM0mRNEI
+      Ghm8W+wpAJPFy6e//0c4zBpTE2OkVtZo8buOyzYDgyNnTwGkYmPcm9S4eq4FX7iRqMPw/w3e
+      LfaOAukK02OjCPIqAJG2fq70tR6HXQYGx8KeAnAHO/jJ5700hD2AzNJSdZNiWqXEg3u3yeRl
+      ui5dopyUCblKJDUfnY2Bw7DbwOBQ2FMAVqcXl5YnnU4DKf7+60n+yT/+4b6VimYbPb19zMzO
+      gKqytrLAWsrC1WsdaJqGruvouo6qVv9u372oLS8ch9r2C/6vv3nMeqH6bHPXehu43tdwqDb8
+      JvPiN3nTxFiaptV0/J4CKOXi/OJnX1ICQMXffKGGqgUsVhsVubxRWqlQYwbD3yi+fTLParpQ
+      9fFBr90QwAlgnyiQg7bOTiqA0xuis7OtqkorpSxPhoYpKArt/jDBaBNRn8LU3Apn2qKIbIRY
+      JUl68zMAan1mHGbbB+Uk2HCSeHE93rQH0GsM1e+zFELEbN7I6rYeG+Wnsyn+6Lev7Vup2ebh
+      xkfff/XBxlIiPOGabDMwOHL2mQgTsVitG09sqxklf7h+s4HB22ZPAWhKmUR8FUWEsurkx59e
+      PS67DAyOhT0dJqWYR7YHafdUGBsd4usHk8dll4HBsbCnACrlHImVZf7m1zP8V3/8+2SXY8dl
+      l4HBsbCnC+QKtdHbnIPeHiQZzp47c1x2GRgcC3v2AKnlcbJChOzoAwpeG8+Gnh2XXQYGx8I+
+      6dErDH79t5TX5pkiT349dDxWGRgcE3sKINB4jj/4SQQFAbNJpFg53vc3GRgcNXsKQM6v8p/+
+      6qdgEnC7PPi6rtFpLAY9EkZnV/nF3amayvzJH1xHPOaXyr1r7J0VIrVCsO0C/Y0lfv7tGr91
+      xsgIcVQsr+X45eB0TWX+5B9dr30diMEm9hwEu4ON2CtrjM3maW+08fTZNMpxWWZgcAzs2QPY
+      PfX8zu//3su/v/2LvyD+3jmMNYwG7wrGLneDU80+WyI1FmcmyKsSlXIFSyCM9ZgMMzA4Dvbs
+      AXKJaf722yHsDgdCcYFZ1UPwuCwzMDgG9uwBCvkklYrK9MQ4UCYVXz0mswwMjoe9UyPW9/C9
+      a3Y2dgEE+Ky7/liMMjA4LvYUQDmf5Ndffknx+d/tFz+itd5wggzeHfZeDRpo44//5E+OyxYD
+      g2Nn7x6gkCEnq5QLOg0NxpPf4N1jbwHkVvnii58xOVPmypVu6rsucONcx3HZZmBw5OwpAE+4
+      kz/6/I94/GQOh9tJY3Okqko1pczjwbskc2W6L1ykkqkQcsmsKS7aG4zMcAYnh33Sogg4vX4m
+      Hv8lTr+T8VWFP/zBxX0rFSQL567cIL0yTbpYJJ1YI5FQuXS1+WVWOF3Xa87idVjoeu0ZxI7C
+      iNdt0A+QNWyj/LuxGu7F/fDGeYG02q7jPhtiACpoop3GxihT2XJVlQroLM9NIZu9dDQ5+PbZ
+      FNhdCIKArmuHLoCDpEY8dAHUaMRWGw4kAF0D7d0RwIt/b1bPIaZG3MDNTz7/EfOxdX58vTr/
+      Xymt83hoGIcniGTuJNTQQdQrMzG7Qs/zzHCiKGIyVdF8FdR6C4iicGhtH9QIYcv5H+TlIybJ
+      hCi+GwIQRfFQMsMpNWbbq+IuyDG/XGagr5Hhp/MM9LfvX6ndy49+/JNXH0Q3/vPXZJqBwdGz
+      jwBkfvXv/zX/7pcT9J6po/HcDxjoPx7DDAyOg30EYOa3fv+fYfPfxx304QkZOwEM3i32cTwF
+      BKHC2NgklUoFRX3LkRMDg0OmipGXRCkT48mTJ8zF1o7eIgODY6SKQbCZDz75hFxFJRDyHb1F
+      BgbHSFU9QKShkXq/wPD40tFbZGBwjFTRA8g8uXeXZCGDFDp39BYZGBwjVfQADpoafRQVK1cu
+      GslxDd4tqhBAijvDGT7/3Wt889X9o7fIwOAYqUIAbiLOdf7dX31Fk5EX0eAdY88xgCoXWEys
+      8+lP/gmFdIK0ajsuuwwMjoU9e4B0bIKxmTVEUcLpUPjmm0fHZZeBwbGwZw/gDTWz/Nf/L382
+      N0RuLUb/x394XHYZGBwLe78o2+Hjv/gX/y1yuYRktiK9I0tvDQxesM88gIAggNVmPx5rDAyO
+      GSM5rsGpxhCAwanGEIDBqcYQgMGpxhCAwanGEIDBqeaIBKCTz6yynMgACtlsAVUukl7PH01z
+      BgYH5JCT4zxHrZBIp0hmROpDIvPzSSxaAm/rwJE0Z7DBf/e//YJ4qlD18f/w5hn+4OO+I7To
+      5HM0ApAstLa2kBteBGBp8jG2+i66PTZUVUXTNDRNQ5blQ2mu1mxiqnp4bb8yorbDtS02qKpa
+      c5NyRd70ouzUeonkenGPEpvJFUuHfx0OiKqqVCqVN65Hq9T2It+jEcAWGjrPI8grJNZlQm4L
+      kiQhiiIWi+VQ6q81m5gkbW57Pp5laGql+vaA37nRvf3DGhC32CDVmNEMwGK2bMoMV/N1EKVD
+      +w3eFEmSMJvNb54ZzmyiFhkdiQC0SplHg3fJFDUmFp3U1wfwusLEM3l0t+XEpXN9OpfgX31R
+      22afbQIw+I3kSAQgmq1ceu/DbZ/Xhx1H0ZyBwYExwqAGpxpDAAanmmMZBBsYVEtl7K/Rc9UH
+      JMRgJ6a2Dw7cniEAgxNF5dH/h7p4r+rjTf2/90YCMFwgg1ONIQCDU43hAhm85PHkCn/51WhN
+      Zf77//IjTNJv7nPUEIDBS5LrRR6Ox2oq86YvtXvb/OZK18DgEDAEYHCqeesu0MjMKl89mq36
+      eFEQ+Jc/vnKEFhmcJt66AObjGX5+e6Lq4yXREIDB4WG4QAanGkMABqcaQwAGpxpDAAanGkMA
+      BqeaoxGArjH37DHf3H5AWS0Ri6UorSdZWs0cSXMGBgflSASgFHOslkycbXMyObvC2lqGZ2MT
+      uD2uo2jOwODAHIkAVEXD6Xbi8ATRyjmWJodIa05cltozHxgYHCVHMhFmtllILy8wvKria+uj
+      QXPjsaSZWUnTVuc7cVkhDE4vR5MVwmLnwrkBsmWIhNyUPSpWcwMFufbkTwYGR8kRLYUQsLt9
+      2N0bf9lsG66P025C13U0XUfXdYrFIhIaYU/1yZkkUaBY3Jz9LOAyI1K9uCyivqkOCbUmGwTY
+      boPTDFr1dVilzTaIem028NyG1xNj+Z0mVOV4bSiVSiiv7Qf4H/7Pr4inq88B++nVDn78vR4q
+      lQrFYpGSJYDmaKy6vCp54LVzUCtQrqG8oB/zgm5N09B1ndXVVZxO567HvTBrr0xhqqrumVFN
+      0zREcfdhzn7lDRuOz4Z0Oo3P5ztweU3TEARhTxt3quPYF8O9MEAURdxu9xvVValUMJvNb628
+      YcPh1VEsFnG5XAdOjagoCqIo7imSnTiZE2G6Tjq9/5zBnk8tTWFhfp5sKklxl3ypu5VXlQqK
+      qr1mjoaqKlQqFSoVZdMuqK115NJxYqtJ0tncVotIry6ymsySzRV2Lb/Rnk6pVGKnvlnXNUql
+      8qZcvDvVoVZkKoq26TNdU8kkV4nFE5u+q94GnUq5QGxpiUxu83fV5DbV1QrlygHGgZUC6fze
+      SXwlSdpTPJVilrmlVVKp9Ca73/py6J3RmR17gtx3iYDTimmXi7uX2tdXJvny21E+OFtP0t3H
+      5VZPVeV1XUcuFlDNDlzPfdtKMcfqWopUZh3BZKOzsx2bWdqhjjKPHt+lpISxWURufHCVl5aX
+      Mwzd+TWV8AAWQeWDa+d2tGFl4gmxQoG5hTyX3rtOU/CVmzg58pDc+jpLBbh67QZhl3lHG+7c
+      HqFSjKHbGnn/xnkkILUyz+zyGv5QFLtJ5+nwYyyeMD3tjdtsiE8Os5zLMbdY4ML1a7SEXKCV
+      GRsZQxZtREM+0iuzTGdLtPYM4HeYqnvyKkXWZStWc43hcK3Mw8FR3r9xHpNk2vF91fv1HI/u
+      3SOuWHBLOh98+AEvshmfzB4AcNolnjx8yKORyQOVtzh9eGw6Ewsp6gLV5SSV11e5e2+QJ0+n
+      4LUf1OLwUFlP4o62MNDb9fLm344Jr8dNLrWC5PJuvrgmG263i3R8Eadnd1/XarWyHMvS2RFl
+      629qs5iIZaGjzr1HKFlEUrOYPQ04rNLL41yBOi5evEhLYxSzSaKupZOOpsiONVhsGzZ0ddbx
+      8l7TRJo72omEQ9gtJmzeMOcvnsdlrmUIKW5K5141ghlBXuPenbssrG3tWasjEvRRzqWRBdum
+      z09sD5CMr1BxdpBPrQBnaiyuYXIE+fSzz9AEEZu1uifOysw0vtZ+LCujxNN5XJFXvYbP7+HB
+      yGPW/AH6enuwb5vU01FV6Ol/j7auChbr5guNKqMHuviHN9owW3b3la0uF0pORrAI23o+p8tF
+      Tl7Bgoi0ayYGCZdTIF4Aq+tVOyatxJOhp8hyhZn5RX7ww0939dmtzhc2gEl8boPJzMitb3EF
+      ggwlcnilMvrZm9R5a4gamSzYhQNMhlYyxFcz9PQEWV7L0xqubeyoqSoN3WcJtpxBMm+294T2
+      AAJOl5N8chHFdIDlE0qJ5NoqIyPDPBl6QipX3UsgGnv6KS48I42bpuDmi6yanNy8+T4dDcFd
+      fHOd9UyKpYV55ubmWFpJbn5nhmghszDG/UePmV5M7GpDemWFUqVMOp0mX95sdzy+ilwukM6k
+      KMu7vQhCJpFZJ5dKk0qmX9qgawrFsoymCwiSiGUPNyQTj1OSN2zIvWZDQdFo8FnRLW6cdguV
+      Kl9GUckl+O677/jFf/y3jCdKVZXZhNmB0wqz8zF83tozjOfz68QXZxkeHubR6NSm705mDyCI
+      9L/3A7rKMhbrAV7gYHZg1xcpaDYaQu6qfc7MyhI5VSBgF5EVBYu08YSsFNLcufUd0dYeCulV
+      +q/cxLGlV9G1MvMzc5jsDoJ1zUT8W90UkfPvf5+Ad29BRzt7uKRbkC2ObSLs7BlANzsxO32E
+      PdZdarAxMHCJhaUkwYaWl2MQwebj2tUr6JpC44KPZCZHQ9i3o+8c6ejmkmpCNttpCT3vBXWd
+      C+fPki3I9DU5QAwR8dnQdX1f/1uQzHg8HhxKgMpBBsEWP7/9459QUXUse/Seu+H2+JgYGcIf
+      bkA0bxbQyewBdJWvf/Ez7j8Y5F//P/83d4ena65CstgorWeQ5TJalVMdSrGAO9JEW1sLdvOr
+      Z4NkdRINBgjV1dPS1IB5B/dDlOycvXSR5oYIialBfvaru1um5lSGHz4kmy8i7/HkjE2OIYRb
+      8Oo5FtfWX36+NDPG0OgzimWZbDaDvOuNVGLk6RL9/Z3MjU/yoqW1pWlGns1QKMl4Q1Gkcorh
+      8bkda4hPjUOwGb9YYCHxPBpXyTO/sILJ4SYQCOB325h4OsRatrzruby8NiYroWCQaNdFzoTN
+      qFqNU0/5ef79X/2KW3/3n/izP/8PLGZqf5WSXdBIF2VkeXPZk9kDAFabi5bODrLJBMV8tuby
+      cj5DoPkMfWeiVZdx1TVhml9hOp+iubMdt/V5lEUy43M7yOXz5JaXcEbagM09gKYWGX00imo2
+      44r28jtXIpuPECQ8VoVHj4YI1zfT216/ow2BaJjBZ8+QdJmeBvvLzxvaeqhTyiwtLVPRTewQ
+      CHmOBZ9NYXhkDIvX/9KGUGM7rlyaqakJKppAuKGFgSbvjjX4IiGmxsYx6TLd559HoSwuBs72
+      szw/zfh8HrPdTUfP2T0CAq8oJae4/ShFVFxhydzBZzfO4rTVcOsJJryBMJ1hheLsKslsiUZv
+      bT1BqqBy8Vof9i3PrpMpAEHk4tXLZPNl3v/wE8y1hs0AmztAYXaKwfwybd39BFz7u1L55AqJ
+      fJmw27wtytLWd554fI1w/8WNZQ/bTLbQc/4iJtMunapSILsWRw6fJbGWgF0EIJis2M1gtvrZ
+      Gv2dfvqEWyOztEe9uEN1WHe8BwQcLheZso7P7UDnRcBPwOby03/WT7mYRzA7tkWZXiC+ZsPr
+      pyOIEg2tXdS3aOTzpapdS5Pdh9OaxWZy0tvVU9vND+Co49pZE2VV4MOWPkzW3VcQ7EZ91MfQ
+      g0FMNg+X+jtfum0nUwCaxrd//yXhli4c7gCdLXW1lVdlKpKL7q52gB0iNtsp5jIk15JYXE2E
+      Qp5tbk5s5hl/fXeS93vroPsqYdfmSycIEiaTxuLUEKMTcbx1rVw53/XKxzRZcTodrKws0N7V
+      s6sda/NzOJu66N4h0mG12mmtC6CIJnYciQNQZi6W44OP3tseKi0l+fvBZ5QTq1jrWvn4+vmd
+      bViYw9HQyZno9rmTsYe3SSXTJHQLl6/cpMG321jkObqOyVXHRzeDqBoHG9Otz/OLbyYZ6K5D
+      aGgj7KwtlFoqFfHXt2IrV0Da3P7JFIAAZlFERaj17aM7V1YFSkXGFmomqgsUCgWc3s3ugSxX
+      kJCJr60T2TUqW2JibgFJ9CLnsi9tVzKLzBS9XPr4RwzIyp43gTvkZ+LZCLkFBx19vfjsrx1r
+      sXLx+vdYX5lF2vW0TLitCg8ePMDli9Ld0fjqCpgdeKQy1t4LCMLuV9Yd9DM+Nkp+yUFHby8+
+      xysbgqEQyzmRs/Wuqh4sKEUSyQwr8Y3IV0N7D8EqeuPNp2RB1F+MZg52R+x2uU7mIBiRzq42
+      VhbnWVpZq724ZIHcMo9Gp0mlU8hblgTshNsfRsqtobtDSKUk8cyr5QqFXBZPtIWPr1+mfeAC
+      XttuP7ydru5z1EeshOqiLy+ull/ju+++49at2wwO3ufZ7O5vQHF4wzgkE5HGINJrP4+cW2Pw
+      /n0ePHzE5HwcaVcFSDQ0hLC7Atitps0/vGgh5PMgWcy43buHE+2eEA7JRLQpuG3iyuMPYLFa
+      cNgc1blAZgcBj5VSUcZk2mvssgeWAG1hE7Ozc2T2WRKxEzabnfEng8QSSVKZzRNpJ7MH0FUm
+      xscxBzqhlK65eC61ynwsgSCasVltO06d70SwsZ4Hz8YQdYW+1lc3SLmYZ70gI5jM6KryPKq0
+      uU5NK7MwvUAFMDt92JyvBrBIFvrOX+FqZ2BfG2ITz5hfimHxS5R0J277xqyxxRXk/feukS6L
+      OOw27LuNNSjzbGYSRYmwZtJoaIy++pHLaaYnp1DCNkxqiaa68I41rEyNM7ewjDVoIq848Nj9
+      L7+bnhhnfilJxFqkbI/iCNh2rON15NwauOrp62vY99gdWZ9jYjlHZ3OEdKFGAWgqseVFUukC
+      dfV2bNbfhIkwQaSj9xwRh44nUH0U5xU6gaZerp7r2uimq5x+tzj92AWBpvZmTK+VWU2t0xp2
+      URad2ChTKG8PYwqCiUA4TPj5P5/nlYDMoS7Ot+6+/OGl1bpOpK2NsNdGKqtS5988DliLxxAt
+      dtwu56Z9AK+ft65baG9qQZEzBBubN0eirF5aWluoZOI0trTsakO4pY2o304ypVAf2DwOaG5t
+      I+QykZRte8xFbMZs9yGnZhkcfECiirDpNtx1XOjvRtA0Ir4aB8DCxvjs0vc+pCHoYWsE+2QK
+      AChVoH/gAhcHumouO/50DKvbQyAQwC6v8Gy5sH8hYGlsmOn5ZRKJZWKvdZVLS0sgr7O0liOT
+      jJMvb4/BC4KEy+PBLKoomoCu6S/7CEEyYTEJ5DJrLMzPk0jvvJ5FkQskUjk8oRBeiw1V39yO
+      z+VgbnaKiem5XVdVptcSlBUT4boQZmmLx6xWWJfBZYVUeufQslopkkit4w6F8FptaFtskEsF
+      HA4n2WymppWdomTCbrft4brtgVxEcEW4fON9WkI1CkAp8XRyEV8gQMAfZHr86aavT6YLBKQW
+      nvJ1Ik1dXT097dXv8AFobY4yNDhI0OskuZpn4L3qps/DLS345tdIZhQ6Ol5d6Kaon9GFNA4V
+      8oKdevtul63MwwffkpMjOGwSN753ZdNq0MFvfklcCBONRPnwav+20marE48zh9XXh0nOwJah
+      S7i1k4QSozHkxmTayQYBfyhIvqTQ3hVmOZbc/LXJxrlL11ALKX79ZOdJMJPFgddpw+LtxVLJ
+      om2ZtPLVtfF+XSvjj26RKyl4d70Wr1CKGSR3PX19TfseuyOCxONbX5JPddHQ3EnUX4MITDbC
+      DpXBB4+xCTKSK7T564NZdPTUdV+kLholFqv+lZkvCDR2c7NOQVFUenr7q3qFz+i9ezRfvcr3
+      f/szYPPy2q6+C1W2LGG32YktL2PrOLO5exUlnOEm/JnSrsu7AXKry8TMGrbMHNbGfjyvRWAm
+      RkcYnklirfgomrw0+HfyvxWmxydxu01MTS1Q1/CaC6mUGBoaIldSaG7v3d2GtRhLgoIzt4Cp
+      rhev85Wrk47NMDq9jGR10VyFC5RemWdiNk6+qHPv1gyR7iu0BO37ltuEDtc//iFRu8yaXGMU
+      SJDou/weSqWCqgtYLOZNv+2JdIFS8QW+u3Wb6ekpxmcWa69AEJBEgVhsmXx6jUIVa7YyiQXu
+      fvcdt27d4tat+6SKtQ22NE1mcXYRp6+ZgQs9tDa+GmBq5RzPppdx+0I0NtfT0rTzuEbXNcId
+      fXgqaRR7lKbg5nVD0bo67CaVeE7Au1MoUdfRVDMXznczPxuj52zflvlqhWw2j6bIPHlwh7n4
+      djdI1zVCbT34tAxlW5jmLfMRhUKOSkUjHZvh1uDIvstMfNFm+lv8OMKdnG10sJSqcRCrysyN
+      PeLWw1Emxp4SzxT3L7MFQRBBKbIcT5JKpk74hhiljGZ2M9DTRTjaQDC085r1/U7kAlQAAA7u
+      SURBVMjGJvjm9hgfDNSRXLdyuW37pM7r+CMtnLt8mdrnGDcQBBOBkJORX89x871e7j2aobE+
+      hAQIZhuNja/cOJN55zj41KM7ODovsLCwjM1hY229jqj31VO+XCwSDUew2F2IO9x4qprnzv0J
+      eiICqbLO+uQMoSv9r55yqoJi8nD9bDN3ni7SEtl+TaYf38HWcYGF+WVsThur2Trqfa+e2IVc
+      kdbesxTmh/B0dFa1vt8WbMe+9IShgsj5i3v/DlsplUp4G7rpssi0NwWQpf2jTjvx8N4ga5oF
+      h6jx4YcfcnI3xBRWGZpZwynKZGSRocePDlSNzR3AZ4fJxQwNof3HAD2XL2MuFamoGpVyadt2
+      wv0QBBG7M0BTyMr84gpOv//lxRVEE06nA7W0TknRd10MpyoKsckhzNFuIh4r+dLmp2WpmMfh
+      D1MfDWPaaTCpq5TzOQbH17h6oROlkN88CLZ66W8PsriaYaB359loVVFZmXqCFOkk6rVR2NIT
+      tvf2U8kmMPubifqquxl1XSGTzVHntZEs1LYadHnmKWnBTzY+h0NN8nAiXlP5F9RFg5TzGVRp
+      8yPu5PUAoolSOsYCOYTCBCX1gNnkNAgEgyi6gKSp7HequqYxN/wYobUHfWEMsbGPjnBtTysQ
+      6bt0DVXVEEVp80xBOcOjW18hh89iFVU+uHpuW+mO81dYS+Xwh4IoRS9m+2YXqFwqYwlYsVq2
+      r1UCEE0eLl/qRRHtWCULFy72v3KBdJ3EaoxUJkuhrCLZ84S8233xjvOXSSRz+INBlJIfk+2V
+      DZVChpVEmlxuHSQrsqxgsu5/C5WTc8yv5mgMmFmJ52jaY0fcVkySxNzMBNlsltGpRSz2jqrL
+      vo5oMhH0uNGtm8ctJ08Azij/4LcOEvvfjMUT5v2bYZLj91jOq+x3L6tKgWQmi7owR9jXREvw
+      IBkrdPL5ApVCFsXsIehzvrpRq1gLZLLYiUY3bkqLa7vBTruVZ/Oz5DMeenvObBvcC4KAx/8q
+      yuFxb14tF/T7KGkWukMulhI7h0El8+42mOwe7LYCZ/rOIq+volYxHpXlMtZQFxc614nlTVwa
+      2HkF6m409VxmI3a087qlamno6KehQ+frr7/d9PnJE4AgIOgaseUVwvV1xGMx6ut3Xjm5F3J2
+      lcGRSTRZpqN+/6Wzq0sJLnzyAcszGYIuyBTKBF21+ptF7t0dQqusIlrq+ODja0iAJueZWVjG
+      HumkP6zhDtTas2z0UNGu84Q7NEDAdIAVsrHpUb4ZWeFce5Ss7qRxl5ng3VCKGe7e/g5fQxdK
+      LknvlSD7PSaejTym+cxFBi6/V7O98DwaV8mxlFKJuDSSso2Ir8YoErA0NcpcPINu3WzxyRMA
+      gK4zOf4Mp8/D02cTBxKA2eVnoL//uQ9cRtV2zibwguWZGZxtXmZmVjDX6RR8tgMIwEZDQKBi
+      O4skvVrJI5hsNAYcfDO8wvv99dyfWKA56t+zpq0o5Ryx+BqZXAHRZKWjvR1bjcmGQ01dXBH9
+      +LwuWpy1i9Bkc3Ph0mU0yY7V2oLPsf+DRcmnuHf3Ng6LBAh09F2seuzwktIao1MlHPUy06XI
+      gQQQbmzDHa6g65AvlnE5Nmw4mQIQRc6d7WFpfp6+c5cPVEV26Sm3J4r4tSVWbd384Fov0h43
+      jD/sY3Z0HkkqEl83Ud9wgGW7qCQzq6Tj4HZY0Do3tiQKooTVEyZsW2R2KU4gGNq3pq2Y7R6E
+      8jT2QAud9bWJBwBBwGwWWXl2lzslF/WNzXzy3vZxyJ5ViBJKIcsvb39LQ9DHxY8+I+LaWwSh
+      pi7O1LXgqGKssCvuFnoiE8TKdi501tZrveDOd1/jjzQxPDzM5Rsf0fV8if3JFICuszQ5yuOl
+      LK7FND/65EbNVVhdfqzmMibdQW9P575Py/aBiwe1dhOCKJKNL2Fu7diyEtPM+ctXUXW95uxl
+      L3B7vUyPj5JZ9dHbc6b2m0rXkNxBAoJ+4PCfoqjUhfyY7TbUKgYBTa0vBq36RvxdEGrPDl7J
+      Mvz4IesVEcUW4GzL/osKtxL1uSlIFtyBOjqbX40xT6wA1rJ5AqEGkKtPtPoSpYwsuuhoCaPp
+      USLu2k6zlMuimu04d95ytQcS3X3vM3DBhKxsWS8q55lbK9IccrEQy9LcUNv8RrFYxGy1I+sm
+      Oj0WNOEAt7DJQX19I45cCU/kYCszIw1NFDQJWTPjs1fngsnrMSbnM6TiizRd+IAWf429a2GN
+      vOiiuc5ONl/7YrpisUC4pYt0No9/oG/TdydTAILIpRsfUywV0cTqVhxuLW+STNjtDgqF4i4r
+      J7ejayoaAqLJjFjF8ontyDx69JSPPzzH4Hej3PxwYxCMrrEwOcw3owkG2kKUTIGaBZCMzTEf
+      S5JMZ1l3KeBtwmWp0ZdWcsyuFLj53vkD90LLczO46nto9Dv3yE20GbW4zqOhUc53+VlOlWoX
+      gKeFH34cJJ/L4QnV7gKJoojJbMFuUyhv6X9OngCUHH/35W2sFguqCcqagx9+UOOb4SUzlfQ4
+      T8ZW0dUcWVOQc437z/EujgxSquvHujqOEuygfYeZ0r2x0tse5NGTCdp6Xl8LJFDf0c916yqR
+      SBSzufbL3tB2hnA4jXzvAeuinw7vQR4MJuRcgvHxcdyBupoH4gBWE0xPT1JIeWhra6tqV5jF
+      30hL4wpuT5BAtLa59uTiOI8mlpFUFU2XifQ46G+qzW6r1caD27eRTDrz69Bc9/HL707gTHAa
+      IdBKnd9MU9dlTMr6/mV2wOryoeoCXe0tuKvchB1ubiIxNcbyukLoAAmYQGF+YQWz1Ypaea2r
+      FgQkUSc2eps7w9M8eDJec82CIJBNrWJ1B1BKOSrVBOG3omsoKrvm16yGiqIgiRImSap2mwXl
+      tVlmllIopTTTS7X9nplUio7+Kyi6xseXu4mvHex+CAdcaPYIHfXBTZ+fvB7A5idim6Gg2mF1
+      lkjTAWf+RDOtXV1EGsJYq0imlFyeBU8DIccyqYoV04FcBJ2iKjDQ1oYkbbm0gojJZCKxPE9L
+      R+17HACSyTT1zd3k5odZSeZpi1SfTlzXdTC7uPn+FVQkzFtTN1ZZR3PPBdzZAmazueprZA22
+      0t0YZy6pcfH92nrVUH0Ts7FZAsEgT5fydDe21Ww3gMPlod1bT8Dj2LRB6thfkPGCeDxOJHKw
+      hW5Voetk4rPcfTROsKmdgTOdWEy73yyPvvmSxnM9PHqS4ExAoRLspKNmF0hhbmKSnKzi8IRo
+      aYps6mJ1TaNUlrHZbQd6T1p6ZZ6FxDqaIiPYfJw901q1ALR8gpmkzPLjrygEz+I0w80rZ2tq
+      f3F2inIpz5eDk3zYX4er7TL1VeQGLafmmcm5aLenmK5E6anf7gbF43HC4fCB3w+wH7qmMjF8
+      n+nVMmd6+2hr2AhFnzwX6JCQ1xNMruQ5f/U69W5xx22Mr9Pa3caz4VnOnetGtLsIuGqfbAGR
+      3PoSibRMOrV9L7MgitgPePMDmMxmNFVGk+yc6Wyp6WYRHH4CDhEdWF2ep6LXPpMcDAXRVQ1N
+      KTAfS2HedV/yFkSRuYmnPBmZQDrA+OcwWJmfoGINc/P965TXX20UOnku0CGhoVEplViLL9PQ
+      0ol3n1lLX7SV9yOtCALo7i6qTaeyGZnkeoFcVkdVlENI6bIZTVVAlJCEPdIC7YIgSPgCEc7e
+      +AFtRRlvoPbJOJvTS0tnNz/yBJDsLny26gRgdoU5dwZ0k5mA9+3ccnK5TEVWmV9cofdM98vP
+      39keoJxLYfE30tfbu+/Nv8GL90sJz981VWuLG5tRzvZfork5TN9Az6Fe3JmZGZwOB+5gE/UB
+      O6V9erQdKWe48/ApkklCUQ72xs7p0Uck8iq6olQtwlJikiezKQRdqz0v6CERi6Xo7u+nr6vl
+      5O8Ie1OSy9M8Gl8mE5tk8MFDklWmR39T1jMp0pkcklmiUCgcag8wMzODpOSYjaXIJGKs1ygA
+      rZRhcGScQjbF0tISyWztE4xL02Msr6aIryyztBKnola3Z0KyuCiklllaWqawQ0KBI0VTeDZ0
+      n5ws8/j+fQaHJza94uqddIFy6RR2X4hSdp3egfM4LMehcwFvwM3MfJzz5zoYHp5Fb37zZd0v
+      iPidjM4mkMo6KVWks8b8mqLNy+WzA3jDLXTUeZleTtVsQ0N7D5LFhjPYSDm1hKzqVBMstngb
+      uHJBx+VwYnYcYP7iTdA1Mtk84WiEvGrj8pYsI++kAGLpPH0XrjM1fI9coYTNbD/Yq3lqRqKQ
+      XGbsmUqqJB14sLsT/ReuvVkFus7cxBNujcTJtEZQ7SFqDTBXcknu3L6Nt74d5CLnrlW3Sre0
+      Ns2X3wxxc6CeeMrEe5217Ql4I5QyeexcOtPN17cfoKhdSKL40g16J8Og2bUYsbXnGz4Ekbqm
+      Vjz2N3sN6H7oukY6s47Xaebp2DR1rR0E3AeJJB0hSpnp+SXMZhM2l5+Qr/a376QTy2QKFUTJ
+      TDQaxVJFJKiST/A3f/s1FpOVvg8/o9mz/bl7ZGFQTWVxYZZ86bnLaHbQ3dZ4wrNDvyGeYB2e
+      YI0Zpd8QRU4yPBKjwZJEj7Yz/HiUm9+7zAE3dB4NWpmF0XusECYSDvPRtYGaq0ivxvj60QTt
+      ER9Wb4iIax8BVAqkchVaWttRBQGnWNte6zdGlGhs2b2veycF8DaQJCeCHGdScfJJxMu9eOZQ
+      XaBDQRBxhBrxZ8tV5UraCZPJQks0gGa2VBeLNdkJ+AWsDi82SUGp4n3Cx8k76QK9LV5dyo21
+      7wddcXkU6JUic0sbGRU0TcXhDRMN1LbvOZ2IkcmXAR1Vl2hsbMRq3v8cC7FRhpJ+LriXeFju
+      5EbX9jHAUc8E78bJ+YXeATbmDwQEQTxRNz+AXl5n7Nkz5mNJLDYH9pr3OkB8cYbxySmKFXC5
+      nNsSze7Yrq5jDbZjL87zaFnn/D75mY6bk/UrGRwZoivCZ59+yuUzdYw+fsj04mrNdZy5cIMf
+      fP8DyC7x4PEoBXn/mP7q3ATxvIrNLGxEZORjHgPsgzEGOCVohST3R6Yx25ycv3ydQKD63Dwv
+      mB0fJrFexh9q5f2eIG5bFdk2EgkCTi+LKZWb3U7uL2YJdx9gT/MR8f8DMSwH8c2DdOIAAAAA
+      SUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
